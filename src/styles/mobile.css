@@ -1,0 +1,292 @@
+/* 移动端响应式样式 */
+
+/* 移动端基础样式 */
+@media (max-width: 768px) {
+  /* 减少整体内边距 */
+  .ant-layout-content {
+    padding: 8px !important;
+  }
+
+  /* 计算器主容器 */
+  .calculator-container {
+    padding: 0 8px !important;
+  }
+
+  /* 表单卡片移动端优化 */
+  .calculation-card {
+    margin-bottom: 16px !important;
+    border-radius: 8px !important;
+  }
+
+  .calculation-card .ant-card-head {
+    padding: 12px 16px !important;
+    min-height: auto !important;
+  }
+
+  .calculation-card .ant-card-head-title {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+
+  .calculation-card .ant-card-body {
+    padding: 16px !important;
+  }
+
+  /* 表单区域样式 */
+  .form-section {
+    margin-bottom: 20px !important;
+  }
+
+  .form-section-title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #262626 !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+  }
+
+  /* 输入框移动端优化 */
+  .ant-input {
+    height: 44px !important;
+    font-size: 16px !important;
+    border-radius: 6px !important;
+  }
+
+  .ant-input-affix-wrapper {
+    height: 44px !important;
+    font-size: 16px !important;
+    border-radius: 6px !important;
+  }
+
+  .ant-picker {
+    height: 44px !important;
+    font-size: 16px !important;
+    border-radius: 6px !important;
+  }
+
+  /* 按钮移动端优化 */
+  .ant-btn {
+    height: 44px !important;
+    font-size: 16px !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+  }
+
+  .ant-btn-lg {
+    height: 48px !important;
+    font-size: 17px !important;
+    padding: 0 20px !important;
+  }
+
+  /* 结果卡片移动端优化 */
+  .result-card {
+    margin-bottom: 12px !important;
+    text-align: center !important;
+  }
+
+  .result-card .ant-card-body {
+    padding: 16px 12px !important;
+  }
+
+  .result-value {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-bottom: 4px !important;
+  }
+
+  .result-label {
+    font-size: 12px !important;
+    color: #8c8c8c !important;
+  }
+
+  /* 统计数字移动端优化 */
+  .ant-statistic {
+    text-align: center !important;
+  }
+
+  .ant-statistic-title {
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .ant-statistic-content {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+  }
+
+  .ant-statistic-content-value {
+    font-size: 18px !important;
+  }
+
+  .ant-statistic-content-suffix {
+    font-size: 14px !important;
+  }
+
+  /* 描述列表移动端优化 */
+  .ant-descriptions-item-label {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+  }
+
+  .ant-descriptions-item-content {
+    font-size: 13px !important;
+  }
+
+  /* 进度条移动端优化 */
+  .ant-progress-text {
+    font-size: 12px !important;
+  }
+
+  /* 提示框移动端优化 */
+  .ant-alert {
+    font-size: 14px !important;
+    border-radius: 6px !important;
+  }
+
+  .ant-alert-message {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+
+  .ant-alert-description {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 折叠面板移动端优化 */
+  .ant-collapse-header {
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+  }
+
+  .ant-collapse-content-box {
+    padding: 16px !important;
+  }
+
+  /* 开关组件移动端优化 */
+  .ant-switch {
+    min-width: 44px !important;
+    height: 22px !important;
+  }
+
+  /* 工具提示图标移动端优化 */
+  .anticon {
+    font-size: 14px !important;
+  }
+
+  /* 间距调整 */
+  .ant-space-item {
+    margin-right: 8px !important;
+  }
+
+  /* 栅格间距优化 */
+  .ant-row {
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+  }
+
+  .ant-col {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+/* 小屏手机优化 (≤576px) */
+@media (max-width: 576px) {
+  /* 进一步减少内边距 */
+  .calculator-container {
+    padding: 0 4px !important;
+  }
+
+  .calculation-card {
+    margin-bottom: 12px !important;
+  }
+
+  .calculation-card .ant-card-body {
+    padding: 12px !important;
+  }
+
+  /* 表单元素更紧凑 */
+  .form-section {
+    margin-bottom: 16px !important;
+  }
+
+  .ant-form-item {
+    margin-bottom: 16px !important;
+  }
+
+  /* 结果展示更紧凑 */
+  .result-card .ant-card-body {
+    padding: 12px 8px !important;
+  }
+
+  .ant-statistic-content {
+    font-size: 16px !important;
+  }
+
+  .ant-statistic-content-value {
+    font-size: 16px !important;
+  }
+
+  /* 描述列表小屏优化 */
+  .ant-descriptions-small .ant-descriptions-item-label,
+  .ant-descriptions-small .ant-descriptions-item-content {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* 横屏手机和小平板 (768px - 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .calculator-container {
+    padding: 0 16px !important;
+  }
+
+  .ant-statistic-content {
+    font-size: 20px !important;
+  }
+
+  .ant-statistic-content-value {
+    font-size: 20px !important;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  /* 增大可点击区域 */
+  .ant-btn {
+    min-height: 44px !important;
+    padding: 12px 16px !important;
+  }
+
+  .ant-switch {
+    min-width: 48px !important;
+    height: 24px !important;
+  }
+
+  /* 优化表单焦点状态 */
+  .ant-input:focus,
+  .ant-input-affix-wrapper:focus {
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
+  }
+}
+
+/* 固定定位优化 */
+@media (max-width: 768px) {
+  /* 移动端不使用sticky定位 */
+  .mobile-sticky-disable {
+    position: static !important;
+  }
+}
+
+/* 安全区域适配 (iPhone X等) */
+@media (max-width: 768px) {
+  @supports (padding: max(0px)) {
+    .calculator-container {
+      padding-left: max(8px, env(safe-area-inset-left)) !important;
+      padding-right: max(8px, env(safe-area-inset-right)) !important;
+      padding-bottom: max(16px, env(safe-area-inset-bottom)) !important;
+    }
+  }
+}

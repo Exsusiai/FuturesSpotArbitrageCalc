@@ -1,0 +1,141 @@
+@import './variables.css';
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Layout utilities */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Card styles */
+.calculation-card {
+  background: var(--card-background);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.calculation-card .ant-card-body {
+  padding: var(--spacing-lg);
+}
+
+.result-card {
+  text-align: center;
+  height: 100%;
+}
+
+.result-card .ant-card-body {
+  padding: var(--spacing-md);
+}
+
+/* Form styles */
+.form-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.form-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+/* Result styles */
+.result-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.result-label {
+  font-size: 14px;
+  color: var(--text-color-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Risk level styles */
+.risk-low {
+  color: var(--risk-low);
+}
+
+.risk-medium {
+  color: var(--risk-medium);
+}
+
+.risk-high {
+  color: var(--risk-high);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .calculation-card .ant-card-body {
+    padding: var(--spacing-md);
+  }
+  
+  .calculation-card {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .result-value {
+    font-size: 20px;
+  }
+  
+  .form-section-title {
+    font-size: 14px;
+  }
+  
+  .ant-descriptions-item-label {
+    font-size: 12px;
+  }
+  
+  .ant-descriptions-item-content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .calculation-card .ant-card-body {
+    padding: var(--spacing-sm);
+  }
+  
+  .result-card .ant-card-body {
+    padding: var(--spacing-sm);
+  }
+  
+  .ant-statistic-title {
+    font-size: 12px;
+  }
+  
+  .ant-statistic-content {
+    font-size: 16px;
+  }
+}
