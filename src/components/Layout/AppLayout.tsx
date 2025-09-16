@@ -11,10 +11,11 @@ interface AppLayoutProps {
 
 export function AppLayout({ children }: AppLayoutProps) {
   return (
-    <Layout style={{ minHeight: '100vh', width: '100%' }}>
+    <Layout style={{ minHeight: '100vh', width: '100vw', margin: 0, padding: 0 }}>
       <Header style={{ 
         background: 'linear-gradient(135deg, #1890ff 0%, #096dd9 100%)', 
         padding: '0',
+        margin: '0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -22,7 +23,10 @@ export function AppLayout({ children }: AppLayoutProps) {
         position: 'sticky',
         top: 0,
         zIndex: 1000,
-        width: '100%'
+        width: '100vw',
+        minWidth: '100vw',
+        left: 0,
+        right: 0
       }}>
         <div style={{ 
           width: '100%',

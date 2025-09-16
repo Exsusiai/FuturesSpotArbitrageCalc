@@ -122,6 +122,22 @@
     overflow-y: visible !important;
   }
 
+  /* 移动端等待状态优化 */
+  .calculator-container .ant-col:last-child > div {
+    min-height: 300px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* 确保Header在移动端也是全宽 */
+  .ant-layout-header {
+    width: 100vw !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+  }
+
   /* 计算器主容器 */
   .calculator-container {
     padding: 0 8px !important;

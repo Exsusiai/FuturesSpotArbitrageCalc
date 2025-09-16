@@ -68,16 +68,26 @@ export function Calculator() {
           <div style={{ minHeight: '400px' }}>
             {loading ? (
               <div style={{ 
-                height: '60vh', 
+                minHeight: '400px',
+                height: 'calc(100vh - 200px)',
+                maxHeight: '600px',
                 display: 'flex', 
-                flexDirection: 'column',
                 alignItems: 'center', 
                 justifyContent: 'center',
                 background: 'white',
                 borderRadius: '8px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                position: 'relative'
               }}>
-                <LoadingSpinner size="large" tip="正在计算套利收益率..." />
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center'
+                }}>
+                  <LoadingSpinner size="large" tip="正在计算套利收益率..." />
+                </div>
               </div>
             ) : result ? (
               <ResultDisplay 
@@ -87,53 +97,79 @@ export function Calculator() {
               />
             ) : hasAnyData ? (
               <div style={{ 
-                height: '60vh', 
+                minHeight: '400px',
+                height: 'calc(100vh - 200px)',
+                maxHeight: '600px',
                 display: 'flex', 
-                flexDirection: 'column',
                 alignItems: 'center', 
                 justifyContent: 'center',
                 background: 'white',
                 borderRadius: '8px',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                padding: '40px'
+                padding: '40px',
+                position: 'relative'
               }}>
-                <Alert
-                  message="等待计算"
-                  description="请完善输入参数后点击计算按钮"
-                  type="info"
-                  showIcon
-                  style={{ 
-                    textAlign: 'center',
-                    border: 'none',
-                    background: 'transparent'
-                  }}
-                />
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  width: '100%',
+                  maxWidth: '400px'
+                }}>
+                  <Alert
+                    message="等待计算"
+                    description="请完善输入参数后点击计算按钮"
+                    type="info"
+                    showIcon
+                    style={{ 
+                      textAlign: 'center',
+                      border: '1px solid #d9f7be',
+                      background: '#f6ffed',
+                      borderRadius: '8px',
+                      width: '100%'
+                    }}
+                  />
+                </div>
               </div>
             ) : (
               <div style={{ 
-                height: '60vh', 
+                minHeight: '400px',
+                height: 'calc(100vh - 200px)',
+                maxHeight: '600px',
                 display: 'flex', 
-                flexDirection: 'column',
                 alignItems: 'center', 
                 justifyContent: 'center',
                 background: 'white',
                 borderRadius: '8px',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                padding: '40px'
+                padding: '40px',
+                position: 'relative'
               }}>
-                <Empty
-                  image={<CalculatorOutlined style={{ fontSize: 64, color: '#bfbfbf' }} />}
-                  description={
-                    <div style={{ textAlign: 'center' }}>
-                      <div style={{ fontSize: 18, marginBottom: 12, fontWeight: 500 }}>
-                        开始计算期现套利收益率
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  width: '100%',
+                  maxWidth: '500px'
+                }}>
+                  <Empty
+                    image={<CalculatorOutlined style={{ fontSize: 64, color: '#bfbfbf' }} />}
+                    description={
+                      <div style={{ textAlign: 'center' }}>
+                        <div style={{ fontSize: 18, marginBottom: 12, fontWeight: 500 }}>
+                          开始计算期现套利收益率
+                        </div>
+                        <div style={{ color: '#8c8c8c', fontSize: 14, lineHeight: 1.5 }}>
+                          请在左侧输入相关参数，或点击"示例"按钮载入示例数据
+                        </div>
                       </div>
-                      <div style={{ color: '#8c8c8c', fontSize: 14, lineHeight: 1.5 }}>
-                        请在左侧输入相关参数，或点击"示例"按钮载入示例数据
-                      </div>
-                    </div>
-                  }
-                />
+                    }
+                  />
+                </div>
               </div>
             )}
           </div>
