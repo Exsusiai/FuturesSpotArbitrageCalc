@@ -32,6 +32,7 @@ export function useCalculation() {
   const [warnings, setWarnings] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [validationErrors, setValidationErrors] = useState<Record<string, string[]>>({})
+  const [hasCalculatedOnce, setHasCalculatedOnce] = useState(false) // 追踪是否已经手动计算过
   
   // 使用 ref 来跟踪上次计算的输入，避免重复计算
   const lastCalculationInputRef = useRef<string>('')
@@ -80,10 +81,13 @@ export function useCalculation() {
   const debouncedValidation = useMemo(
     () => debounce((data: FormData) => {
       const validation = validateCompleteForm(data)
-      setErrors(validation.errors)
-      setWarnings(validation.warnings)
+      // 只有在已经计算过一次后才显示错误
+      if (hasCalculatedOnce) {
+        setErrors(validation.errors)
+        setWarnings(validation.warnings)
+      }
     }, 300),
-    []
+    [hasCalculatedOnce]
   )
 
   // Update form field
@@ -112,6 +116,7 @@ export function useCalculation() {
     setLoading(true)
     setErrors([])
     setWarnings([])
+    setHasCalculatedOnce(true) // 标记为已经手动计算过
 
     try {
       // Validate input
@@ -192,6 +197,7 @@ export function useCalculation() {
     setErrors([])
     setWarnings([])
     setValidationErrors({})
+    setHasCalculatedOnce(false) // 重置计算状态
     lastCalculationInputRef.current = ''
   }, [])
 
@@ -234,9 +240,9 @@ export function useCalculation() {
     }
   }, [formData, hasAnyData, debouncedValidation])
 
-  // Auto-calculate effect (when form is complete and valid)
+  // Auto-calculate effect (when form is complete and valid, and user has calculated once)
   useEffect(() => {
-    if (isValidForCalculation && !loading && calculationInput) {
+    if (isValidForCalculation && !loading && calculationInput && hasCalculatedOnce) {
       // 创建当前输入的唯一标识符
       const currentInputKey = JSON.stringify(calculationInput)
       
@@ -250,7 +256,7 @@ export function useCalculation() {
         return () => clearTimeout(timer)
       }
     }
-  }, [isValidForCalculation, loading, calculationInput, calculate])
+  }, [isValidForCalculation, loading, calculationInput, hasCalculatedOnce, calculate])
 
   return {
     // Form data

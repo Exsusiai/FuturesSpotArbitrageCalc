@@ -163,27 +163,6 @@ export function InputForm({
               <Form.Item
                 label={
                   <Space>
-                    期货价格
-                    <Tooltip title="当前期货合约的市场价格">
-                      <InfoCircleOutlined style={{ color: '#8c8c8c' }} />
-                    </Tooltip>
-                  </Space>
-                }
-                {...getFieldValidationStatus('futurePrice')}
-              >
-                <Input
-                  value={formData.futurePrice}
-                  onChange={(e) => handleFieldChange('futurePrice', e.target.value)}
-                  placeholder="请输入期货价格"
-                  suffix="元"
-                  autoComplete="off"
-                />
-              </Form.Item>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Form.Item
-                label={
-                  <Space>
                     现货价格
                     <Tooltip title="预期交割时的现货市场价格">
                       <InfoCircleOutlined style={{ color: '#8c8c8c' }} />
@@ -196,6 +175,27 @@ export function InputForm({
                   value={formData.spotPrice}
                   onChange={(e) => handleFieldChange('spotPrice', e.target.value)}
                   placeholder="请输入现货价格"
+                  suffix="元"
+                  autoComplete="off"
+                />
+              </Form.Item>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Form.Item
+                label={
+                  <Space>
+                    期货价格
+                    <Tooltip title="当前期货合约的市场价格">
+                      <InfoCircleOutlined style={{ color: '#8c8c8c' }} />
+                    </Tooltip>
+                  </Space>
+                }
+                {...getFieldValidationStatus('futurePrice')}
+              >
+                <Input
+                  value={formData.futurePrice}
+                  onChange={(e) => handleFieldChange('futurePrice', e.target.value)}
+                  placeholder="请输入期货价格"
                   suffix="元"
                   autoComplete="off"
                 />
