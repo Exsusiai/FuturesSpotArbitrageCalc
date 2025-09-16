@@ -1,12 +1,75 @@
-/* 移动端响应式样式 */
+/* 响应式布局优化 */
+
+/* 超大屏幕优化 (≥1600px) */
+@media (min-width: 1600px) {
+  .calculator-container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+  }
+  
+  .ant-layout-content {
+    padding: 32px !important;
+  }
+}
+
+/* 大屏幕优化 (1200px - 1600px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .calculator-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+  }
+  
+  .ant-layout-content {
+    padding: 24px !important;
+  }
+}
+
+/* 中等屏幕优化 (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .calculator-container {
+    max-width: 100% !important;
+    padding: 0 16px !important;
+  }
+  
+  .ant-layout-content {
+    padding: 20px !important;
+  }
+}
+
+/* 平板端优化 (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .ant-layout-header > div {
+    padding: 0 16px !important;
+  }
+  
+  .header-title-main {
+    font-size: 18px !important;
+  }
+  
+  .header-title-sub {
+    font-size: 13px !important;
+  }
+  
+  .calculator-container {
+    padding: 0 12px !important;
+  }
+  
+  .ant-layout-content {
+    padding: 16px !important;
+  }
+}
 
 /* 移动端基础样式 */
 @media (max-width: 768px) {
   /* Header移动端优化 */
   .ant-layout-header {
-    padding: 0 12px !important;
+    padding: 0 !important;
     height: auto !important;
     min-height: 56px !important;
+  }
+
+  .ant-layout-header > div {
+    padding: 0 12px !important;
   }
 
   /* 标题容器移动端优化 */
@@ -16,13 +79,13 @@
   }
 
   .header-title-main {
-    font-size: 16px !important;
+    font-size: 14px !important;
     line-height: 1.2 !important;
     font-weight: 600 !important;
   }
 
   .header-title-sub {
-    font-size: 12px !important;
+    font-size: 11px !important;
     line-height: 1.2 !important;
     margin-top: -1px !important;
   }
@@ -42,9 +105,21 @@
     font-size: 12px !important;
   }
 
+  /* 计算器容器移动端优化 */
+  .calculator-container {
+    padding: 0 !important;
+  }
+
   /* 减少整体内边距 */
   .ant-layout-content {
     padding: 8px !important;
+  }
+
+  /* 取消移动端sticky定位 */
+  .mobile-sticky-disable {
+    position: static !important;
+    max-height: none !important;
+    overflow-y: visible !important;
   }
 
   /* 计算器主容器 */
