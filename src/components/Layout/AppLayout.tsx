@@ -13,19 +13,40 @@ export function AppLayout({ children }: AppLayoutProps) {
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <Header style={{ 
-        background: '#001529', 
-        padding: '0 24px',
+        background: 'linear-gradient(135deg, #1890ff 0%, #096dd9 100%)', 
+        padding: '0 16px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
       }}>
-        <Title level={3} style={{ color: 'white', margin: 0 }}>
-          期现套利计算器
-        </Title>
+        <div className="header-title-container" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <Title level={3} className="header-title-main" style={{ 
+            color: 'white', 
+            margin: 0, 
+            fontSize: 'clamp(16px, 4vw, 20px)',
+            fontWeight: 600,
+            lineHeight: 1.2
+          }}>
+            Futures Spot Arbitrage Calc
+          </Title>
+          <Text className="header-title-sub" style={{ 
+            color: 'rgba(255,255,255,0.8)', 
+            fontSize: 'clamp(12px, 3vw, 14px)',
+            marginTop: '-2px'
+          }}>
+            期现套利计算器
+          </Text>
+        </div>
         
         <Space>
           <Tooltip title="期现套利是利用期货与现货价格差异的投资策略，计算结果仅供参考">
-            <InfoCircleOutlined style={{ color: 'white', fontSize: 16 }} />
+            <InfoCircleOutlined style={{ 
+              color: 'white', 
+              fontSize: 'clamp(14px, 3vw, 16px)',
+              opacity: 0.8,
+              transition: 'opacity 0.3s'
+            }} />
           </Tooltip>
         </Space>
       </Header>
@@ -44,8 +65,8 @@ export function AppLayout({ children }: AppLayoutProps) {
         borderTop: '1px solid #d9d9d9',
         padding: '16px 24px'
       }}>
-        <Space split={<Divider type="vertical" />} size="large">
-          <Text type="secondary">期现套利计算器 ©2025</Text>
+        <Space split={<Divider type="vertical" />} size="large" style={{ flexWrap: 'wrap', justifyContent: 'center' }}>
+          <Text type="secondary">Futures Spot Arbitrage Calc ©2025</Text>
           <Space>
             <WarningOutlined style={{ color: '#faad14' }} />
             <Text type="secondary">仅供参考，投资有风险</Text>
