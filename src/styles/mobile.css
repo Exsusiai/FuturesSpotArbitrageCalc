@@ -61,6 +61,15 @@
 
 /* 移动端基础样式 */
 @media (max-width: 768px) {
+  /* 动态间距变量 - 紧凑版 */
+  :root {
+    --mobile-spacing-xs: clamp(2px, 0.5vw, 3px);
+    --mobile-spacing-sm: clamp(3px, 0.8vw, 5px);
+    --mobile-spacing-md: clamp(5px, 1.2vw, 8px);
+    --mobile-spacing-lg: clamp(8px, 1.8vw, 12px);
+    --mobile-spacing-xl: clamp(12px, 2.5vw, 16px);
+  }
+
   /* Header移动端优化 */
   .ant-layout-header {
     padding: 0 !important;
@@ -69,7 +78,7 @@
   }
 
   .ant-layout-header > div {
-    padding: 0 12px !important;
+    padding: 0 var(--mobile-spacing-md) !important;
   }
 
   /* 标题容器移动端优化 */
@@ -79,20 +88,20 @@
   }
 
   .header-title-main {
-    font-size: 14px !important;
+    font-size: clamp(14px, 3.5vw, 16px) !important;
     line-height: 1.2 !important;
     font-weight: 600 !important;
   }
 
   .header-title-sub {
-    font-size: 11px !important;
+    font-size: clamp(11px, 2.5vw, 13px) !important;
     line-height: 1.2 !important;
     margin-top: -1px !important;
   }
 
   /* Footer移动端优化 */
   .ant-layout-footer {
-    padding: 12px 16px !important;
+    padding: var(--mobile-spacing-md) var(--mobile-spacing-lg) !important;
     text-align: center !important;
   }
 
@@ -102,7 +111,7 @@
   }
 
   .ant-layout-footer .ant-typography {
-    font-size: 12px !important;
+    font-size: clamp(12px, 2.5vw, 14px) !important;
   }
 
   /* 计算器容器移动端优化 */
@@ -112,7 +121,7 @@
 
   /* 减少整体内边距 */
   .ant-layout-content {
-    padding: 8px !important;
+    padding: var(--mobile-spacing-md) !important;
   }
 
   /* 取消移动端sticky定位 */
@@ -160,54 +169,73 @@
   }
 
   .calculation-card .ant-card-body {
-    padding: 16px !important;
+    padding: var(--mobile-spacing-lg) !important;
   }
 
   /* 表单区域样式 */
   .form-section {
-    margin-bottom: 20px !important;
+    margin-bottom: var(--mobile-spacing-lg) !important;
   }
 
   .form-section-title {
-    font-size: 14px !important;
+    font-size: clamp(14px, 3vw, 16px) !important;
     font-weight: 600 !important;
     color: #262626 !important;
-    margin-bottom: 12px !important;
-    padding-bottom: 8px !important;
+    margin-bottom: var(--mobile-spacing-sm) !important;
+    padding-bottom: var(--mobile-spacing-xs) !important;
     border-bottom: 1px solid #f0f0f0 !important;
+  }
+
+  /* 表单项间距优化 */
+  .ant-form-item {
+    margin-bottom: var(--mobile-spacing-md) !important;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: var(--mobile-spacing-xs) !important;
+  }
+
+  .ant-form-item-label > label {
+    height: auto !important;
+    line-height: 1.3 !important;
+    font-size: clamp(13px, 2.8vw, 15px) !important;
   }
 
   /* 输入框移动端优化 */
   .ant-input {
-    height: 44px !important;
+    height: 38px !important;
     font-size: 16px !important;
     border-radius: 6px !important;
+    padding: 6px 11px !important;
   }
 
   .ant-input-affix-wrapper {
-    height: 44px !important;
+    height: 38px !important;
     font-size: 16px !important;
     border-radius: 6px !important;
+    padding: 6px 11px !important;
   }
 
   .ant-picker {
-    height: 44px !important;
+    height: 38px !important;
     font-size: 16px !important;
     border-radius: 6px !important;
+    padding: 6px 11px !important;
   }
 
   /* 按钮移动端优化 */
   .ant-btn {
-    height: 44px !important;
-    font-size: 16px !important;
+    height: 38px !important;
+    font-size: 15px !important;
     border-radius: 6px !important;
     font-weight: 500 !important;
+    padding: 6px 15px !important;
   }
 
   .ant-btn-lg {
-    height: 48px !important;
-    font-size: 17px !important;
-    padding: 0 20px !important;
+    height: 42px !important;
+    font-size: 16px !important;
+    padding: 8px 18px !important;
   }
 
   /* 结果卡片移动端优化 */
@@ -286,13 +314,26 @@
   }
 
   /* 折叠面板移动端优化 */
+  .ant-collapse {
+    margin-bottom: 12px !important;
+  }
+
   .ant-collapse-header {
-    padding: 12px 16px !important;
+    padding: 10px 16px !important;
     font-size: 15px !important;
   }
 
   .ant-collapse-content-box {
-    padding: 16px !important;
+    padding: 12px !important;
+  }
+
+  /* 按钮组间距优化 */
+  .ant-space-vertical {
+    gap: 8px !important;
+  }
+
+  .ant-space-horizontal {
+    gap: 8px !important;
   }
 
   /* 开关组件移动端优化 */
@@ -325,26 +366,49 @@
 
 /* 小屏手机优化 (≤576px) */
 @media (max-width: 576px) {
+  /* 小屏动态间距变量 - 超紧凑版 */
+  :root {
+    --mobile-spacing-xs: clamp(1px, 0.3vw, 2px);
+    --mobile-spacing-sm: clamp(2px, 0.6vw, 4px);
+    --mobile-spacing-md: clamp(4px, 1vw, 6px);
+    --mobile-spacing-lg: clamp(6px, 1.5vw, 10px);
+    --mobile-spacing-xl: clamp(10px, 2.2vw, 14px);
+  }
+
   /* 进一步减少内边距 */
   .calculator-container {
-    padding: 0 4px !important;
+    padding: 0 var(--mobile-spacing-xs) !important;
   }
 
   .calculation-card {
-    margin-bottom: 12px !important;
+    margin-bottom: var(--mobile-spacing-md) !important;
   }
 
   .calculation-card .ant-card-body {
-    padding: 12px !important;
+    padding: var(--mobile-spacing-md) !important;
   }
 
   /* 表单元素更紧凑 */
   .form-section {
-    margin-bottom: 16px !important;
+    margin-bottom: var(--mobile-spacing-md) !important;
+  }
+
+  .form-section-title {
+    margin-bottom: var(--mobile-spacing-sm) !important;
+    padding-bottom: var(--mobile-spacing-xs) !important;
+    font-size: clamp(13px, 2.8vw, 15px) !important;
   }
 
   .ant-form-item {
-    margin-bottom: 16px !important;
+    margin-bottom: var(--mobile-spacing-sm) !important;
+  }
+
+  .ant-form-item-label {
+    padding-bottom: var(--mobile-spacing-xs) !important;
+  }
+
+  .ant-form-item-label > label {
+    font-size: clamp(12px, 2.5vw, 14px) !important;
   }
 
   /* 结果展示更紧凑 */
@@ -387,18 +451,19 @@
 @media (hover: none) and (pointer: coarse) {
   /* 增大可点击区域 */
   .ant-btn {
-    min-height: 44px !important;
-    padding: 12px 16px !important;
+    min-height: 38px !important;
+    padding: 8px 15px !important;
   }
 
   .ant-switch {
-    min-width: 48px !important;
-    height: 24px !important;
+    min-width: 44px !important;
+    height: 22px !important;
   }
 
   /* 优化表单焦点状态 */
   .ant-input:focus,
-  .ant-input-affix-wrapper:focus {
+  .ant-input-affix-wrapper:focus,
+  .ant-picker:focus {
     box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2) !important;
   }
 }
